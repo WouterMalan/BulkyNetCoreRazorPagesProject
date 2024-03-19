@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (web)",
+            "type": "coreclr",
+            "preLaunchTask": "BulkyBuild",
+            "request": "launch",
+            "program": "${workspaceFolder}/BulkyWeb_RazorProject/bin/Debug/net8.0/BulkyWeb_RazorProject.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/BulkyWeb_RazorProject",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "^\\s*Now listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        }
+    ]
+}
