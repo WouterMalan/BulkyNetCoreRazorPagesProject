@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Udemy Courses\NetCoreRazorPagesProject\BulkyWeb_RazorProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Udemy Courses/NetCoreRazorPagesProject/BulkyWeb_RazorProject/Pages/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Udemy Courses/NetCoreRazorPagesProject/BulkyWeb_RazorProject/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
