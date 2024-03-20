@@ -11,32 +11,35 @@ using Microsoft.Extensions.Logging;
 namespace BulkyWeb_RazorProject.Pages.Categories
 {
     [BindProperties]
-    public class Create : PageModel
+    public class Delete : PageModel
     {
-       private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext dbContext;
 
         public Category Category { get; set; }
 
-        public Create(ApplicationDbContext dbContext)
+        public Delete(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
         public void OnGet()
         {
-
+            
         }
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            var category = dbContext.Category.Find(Category.Id);
+
+            if (category == null)
             {
-                dbContext.Category.Add(Category);
-                dbContext.SaveChanges();
-                return RedirectToPage("Index");
+                return NotFound();
             }
 
-            return Page();
+            dbContext.Category.Remove(category);
+            dbContext.SaveChanges();
+
+            return RedirectToPage("Index");
         }
     }
 }

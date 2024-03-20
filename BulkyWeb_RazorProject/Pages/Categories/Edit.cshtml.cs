@@ -10,29 +10,28 @@ using Microsoft.Extensions.Logging;
 
 namespace BulkyWeb_RazorProject.Pages.Categories
 {
-    [BindProperties]
-    public class Create : PageModel
+    public class Edit : PageModel
     {
        private readonly ApplicationDbContext dbContext;
 
         public Category Category { get; set; }
 
-        public Create(ApplicationDbContext dbContext)
+        public Edit(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
         public void OnGet()
         {
-
         }
 
         public IActionResult OnPost()
         {
             if (ModelState.IsValid)
             {
-                dbContext.Category.Add(Category);
+                dbContext.Update(Category);
                 dbContext.SaveChanges();
+
                 return RedirectToPage("Index");
             }
 
