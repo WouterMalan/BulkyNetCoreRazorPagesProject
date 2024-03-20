@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BulkyWeb_RazorProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+730d1756dcfdd670619175d9a58fb72f6937183a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BulkyWeb_RazorProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BulkyWeb_RazorProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
