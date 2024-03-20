@@ -22,9 +22,12 @@ namespace BulkyWeb_RazorProject.Pages.Categories
             this.dbContext = dbContext;
         }
 
-        public void OnGet()
+        public void OnGet(int? id)
         {
-            
+            if (id != null && id != 0)
+            {
+                Category = dbContext.Category.Find(id);
+            }
         }
 
         public IActionResult OnPost()
@@ -38,6 +41,7 @@ namespace BulkyWeb_RazorProject.Pages.Categories
 
             dbContext.Category.Remove(category);
             dbContext.SaveChanges();
+            TempData["Success"] = "Category deleted successfully";
 
             return RedirectToPage("Index");
         }

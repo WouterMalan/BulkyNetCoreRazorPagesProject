@@ -33,6 +33,8 @@ namespace BulkyWeb_RazorProject.Pages.Categories
             {
                 dbContext.Category.Add(Category);
                 dbContext.SaveChanges();
+                TempData["Success"] = "Category created successfully";
+
                 return RedirectToPage("Index");
             }
 

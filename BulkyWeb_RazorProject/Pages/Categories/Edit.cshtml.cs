@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace BulkyWeb_RazorProject.Pages.Categories
 {
+    [BindProperties]
     public class Edit : PageModel
     {
        private readonly ApplicationDbContext dbContext;
@@ -21,8 +22,12 @@ namespace BulkyWeb_RazorProject.Pages.Categories
             this.dbContext = dbContext;
         }
 
-        public void OnGet()
+        public void OnGet(int? id)
         {
+            if (id != null && id != 0)
+            {
+                Category = dbContext.Category.Find(id);
+            }
         }
 
         public IActionResult OnPost()
@@ -31,11 +36,13 @@ namespace BulkyWeb_RazorProject.Pages.Categories
             {
                 dbContext.Update(Category);
                 dbContext.SaveChanges();
+                TempData["Success"] = "Category updated successfully";
 
                 return RedirectToPage("Index");
             }
 
             return Page();
         }
+
     }
 }
